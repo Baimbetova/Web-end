@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="well">
+<form action="{% url 'blog_edit' blog.id %}" method="post">
+{% csrf_token %}
+<div class="form-group">
+  <label for="title">Title:</label><br />
+  <input type="text" name="title" id="title" value="{{blog.title}}" class="form-control" />
+</div>
+<div class="form-group">
+  <label for="body">Body:</label><br />
+  <input type="text" name="body" id="body" value="{{blog.body}}" class="form-control"/>
+</div>
+  <input type="submit" value="Submit" class="btn btn-info" />
+</form>
+<div class="panel-body">
+<a href="{% url 'blog_detail' blog.id%}"><- Back</a>
+</div>
+</div>
+
+{% endblock content %}

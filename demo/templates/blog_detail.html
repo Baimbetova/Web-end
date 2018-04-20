@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="well">
+	<div class="details">
+		<div class="panel panel-default">
+			
+				<div class="panel-body">
+					<label >Title:</label><br />				
+					{{blog.title}}				
+				</div>				
+				<div class="panel-body">
+					<label >Body:</label><br />
+					{{blog.body}}
+				</div>		
+				<div class="panel-body">
+					<label >Created at:</label><br />
+					{{blog.created_at}}
+				</div>
+				<div class="panel-body">
+					<a href="{% url 'blog_edit' blog.id %}" >
+						<button class="btn btn-info">Edit</button>
+					</a>
+				</div>
+		</div>	
+	</div>
+	
+</div>
+
+</div>
+
+{% endblock content %}
